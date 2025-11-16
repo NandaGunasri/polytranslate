@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PolyTranslate — Multilingual made simple</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg1:#0c1120;
+    --bg2:#0a0f1a;
+    --card:#111827;
+    --border:#1f2937;
+    --muted:#9ca3af;
+    --text:#e5e7eb;
+    --accent:#22e4ac;
+  }
+
+  body{
+    margin:0;
+    font-family:"Poppins",sans-serif;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:var(--text);
+  }
+
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 48px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .logo-row{
+    display:flex;
+    gap:6px;
+  }
+  .logo-circle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#6ee7b7,#4f46e5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .logo-circle span{
+    font-size:22px;
+    color:#0f1220;
+    font-weight:700;
+  }
+
+  .nav-links a{
+    color:var(--muted);
+    text-decoration:none;
+    margin-left:20px;
+    font-size:15px;
+    transition:.2s;
+  }
+  .nav-links a:hover{
+    color:white;
+  }
+
+  .hero{
+    max-width:1100px;
+    margin:20px auto;
+    padding:40px;
+  }
+
+  .hero-title{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .hero-desc{
+    color:var(--muted);
+    font-size:17px;
+    margin-bottom:25px;
+  }
+
+  .btn-row{
+    display:flex;
+    gap:14px;
+    margin-bottom:32px;
+  }
+  .btn{
+    background:var(--accent);
+    color:black;
+    padding:14px 28px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    font-size:16px;
+    transition:0.25s;
+  }
+  .btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 4px 20px rgba(34,228,172,0.4);
+  }
+
+  .btn-secondary{
+    background:transparent;
+    border:1px solid var(--border);
+    color:var(--muted);
+  }
+  .btn-secondary:hover{
+    background:#1f2937;
+    color:white;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+  }
+
+  .card{
+    background:var(--card);
+    padding:24px;
+    border-radius:16px;
+    border:1px solid var(--border);
+  }
+  .card ul{
+    margin-top:10px;
+    color:var(--muted);
+    padding-left:18px;
+  }
+
+  .demo-title{
+    font-weight:600;
+    margin-bottom:10px;
+  }
+
+  textarea, select{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    background:#0d1422;
+    border:1px solid var(--border);
+    color:var(--text);
+    font-size:16px;
+    margin-bottom:16px;
+  }
+
+  .demo-output{
+    background:#0d1422;
+    border:1px solid var(--border);
+    padding:16px;
+    border-radius:12px;
+    white-space:pre-wrap;
+    color:var(--muted);
+    min-height:80px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="brand">
+    <div class="logo-row">
+      <div class="logo-circle"><span>≈</span></div>
+      <div class="logo-circle"><span>≈</span></div>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:18px;">PolyTranslate</div>
+      <div style="color:var(--muted);font-size:13px;">Multilingual made simple</div>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Docs</a>
+    <a href="#">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-title">Make your app global — instantly</div>
+  <div class="hero-desc">
+    Auto-generate translations for text, files, and UI labels using Lingo CLI.
+    Demo below shows live UI behavior — real translations are produced with Lingo CLI in backend scripts.
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" onclick="scrollToDemo()">Try demo</button>
+    <button class="btn btn-secondary">View code</button>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Features</h3>
+      <ul>
+        <li>File & text translation (bulk)</li>
+        <li>Auto language detection</li>
+        <li>Dev-friendly CLI pipeline</li>
+        <li>Clean demo UI for judges</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Stack</h3>
+      <div style="color:var(--muted);margin-top:12px">
+        Node.js • Lingo CLI • HTML/CSS • Optional React
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE DEMO -->
+  <div style="margin-top:40px" id="demo">
+    <h3>Live demo (UI-only)</h3>
+    <p style="color:var(--muted)">Type text, pick a language, press Translate</p>
+
+    <textarea id="inputTxt" placeholder="Type a phrase like: Hello, welcome to PolyTranslate"></textarea>
+
+    <select id="langSelect">
+      <option value="hi">Hindi</option>
+      <option value="ta">Tamil</option>
+      <option value="te">Telugu</option>
+      <option value="fr">French</option>
+      <option value="es">Spanish</option>
+      <option value="de">German</option>
+    </select>
+
+    <button class="btn" onclick="translateNow()">Translate</button>
+
+    <div id="output" class="demo-output">Demo output will appear here...</div>
+  </div>
+</section>
+
+<script>
+  const sample={
+    hi:"नमस्ते! आपका स्वागत है!",
+    ta:"வணக்கம்! வரவேற்கிறோம்!",
+    te:"హలో! స్వాగతం!",
+    fr:"Bonjour! Bienvenue!",
+    es:"¡Hola! Bienvenido!",
+    de:"Hallo! Willkommen!"
+  };
+
+  function translateNow(){
+    let txt=document.getElementById("inputTxt").value.trim();
+    let lang=document.getElementById("langSelect").value;
+    let out=document.getElementById("output");
+
+    if(!txt){
+      out.textContent="⚠️ Please type text first.";
+      return;
+    }
+
+    out.textContent="⏳ Translating...";
+    setTimeout(()=>{
+      out.textContent=`Input: ${txt}\n\nOutput (${lang.toUpperCase()}): ${sample[lang]}`;
+    },600);
+  }
+
+  function scrollToDemo(){
+    document.getElementById("demo").scrollIntoView({behavior:"smooth"});
+  }
+</script>
+</body>
+</html>

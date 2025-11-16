@@ -1,0 +1,12 @@
+{
+  "name": "polytranslate",
+  "version": "1.0.0",
+  "description": "Multilingual translator built using Lingo CLI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Guna Sri",
+  "license": "MIT"
+}
