@@ -1,93 +1,89 @@
-🌍 PolyTranslate — Build Global from Day One
+🌍 PolyTranslate
+Multilingual text & file translation made simple — powered by Lingo CLI
 
-A Multilingual Translation Engine Powered by Lingo CLI
-PolyTranslate is a fast, developer-friendly multilingual translation tool built for the WeMakeDevs Multilingual Hackathon.
-It translates text and files into multiple languages using Lingo CLI, enabling developers to make their apps instantly global — without hiring translators or writing complex backend logic.
+PolyTranslate is a lightweight, developer-friendly multilingual translation tool built using Node.js, Lingo CLI, and a clean HTML/CSS demo interface.
+It instantly generates translations for text & files across multiple languages with a smooth CLI workflow and a polished UI demo.
 
-🚀 Features
+🚀 Live Demo: https://polytranslate.netlify.app
 
-🔤 Translate text into 15+ languages
-📄 Translate entire files (txt, md, json, etc.)
-🌐 Auto-detect source language
-🗂️ Generate translated files in bulk
-⚡ Super-simple Node.js script
-🖥️ Optional clean web UI
-🧠 100% powered by Lingo CLI, no external translation APIs
+📦 GitHub: https://github.com/NandaGunasri/polytranslate
 
-🧩 How It Works
+⭐ Features
+🔤 Bulk file translation using Lingo CLI
+🌐 Instant text translation across multiple languages
+🤖 Auto language detection (via Lingo)
+📁 Text & file input support
+📦 Clean CLI pipeline for developers
+🎨 Modern UI demo for hackathon judges
+⚡ No frameworks needed — works with pure JS & HTML
 
-PolyTranslate connects your app or script with Lingo CLI:
-User inputs text or a file
-Node.js script processes input
-Script invokes Lingo CLI commands
-Lingo returns translated output
-Output saved into language-specific files
-This pipeline makes the entire multilingual workflow automated, reliable, and incredibly easy.
-
-🛠️ Tech Stack
-
-Node.js (control logic)
-JavaScript
-HTML + CSS (sample interface)
-Lingo CLI (translation engine)
-
-GitHub (version control)
-
-📦 Installation
-git clone https://github.com/<your-username>/polytranslate
-cd polytranslate
-npm install
-▶️ Run the Translator
-node index.js
-
-
-Translations will appear in:
-
-/translations/output/
-🧠 Using Lingo CLI
-PolyTranslate uses the following Lingo features:
-✔ lingo translate
-To translate text into any supported language.
-Example used internally:
-echo "Hello World" | lingo translate --to hi
-✔ Automatic language detection
-Lingo identifies the input language automatically.
-✔ Bulk pipeline
-PolyTranslate loops through multiple languages and generates files automatically.
-
-📁 Project Structure
+📂 Project Structure
 polytranslate/
 │
-├── index.js
+├── input/              # Input text files to translate
+├── public/             # Website demo (HTML/CSS/JS)
+│   ├── index.html
+│   ├── logo.svg
+│
+├── translations/       # Auto-generated translations (output)
+├── index.js            # Node.js script using Lingo CLI
 ├── package.json
-├── README.md
-├── input/
-│   └── example.txt
-├── public/
-│   └── index.html
-└── translations/
-    └── output/
+└── README.md
 
-🎥 Demo Video (For Submission)
+🛠 Tech Stack
 
-Upload to YouTube and replace this placeholder:
-➡️ 
+Frontend:
+HTML
+CSS
+JavaScript
+Backend / CLI:
+Node.js
+Lingo CLI
 
-📚 Learning & Growth (Hackathon Requirement)
+Deployment:
+Netlify
+🚀 How It Works
+1️⃣ Install dependencies
+npm install
+2️⃣ Add your input files
+Place text files inside:
+/input/example.txt
+3️⃣ Run translation
+node index.js
+This script:
+✔ Reads input files
+✔ Runs translation via Lingo CLI
+✔ Outputs translations to /translations/<lang>/...
 
-This project taught:
+💡 Languages Supported
+(As included in the demo)
+Hindi (hi)
+Tamil (ta)
+Telugu (te)
+French (fr)
+Spanish (es)
+German (de)
 
-how to integrate CLI tools with Node.js
+You can add more easily by editing the array inside index.js.
+🎨 UI Demo Preview
+The demo at https://polytranslate.netlify.app
+ lets users:
+Type any text
+Choose a language
+Get instant sample translation (UI-only)
+Clear UX to show judges how the real translation pipeline works in backend
+🧠 Why I Built This
+To make it extremely easy for developers to globalize their apps using Lingo CLI — with a real UI, real CLI pipeline, and clean structure.
 
-automating multilingual pipelines
+🏆 Hackathon Notes (Required)
+This project uses Lingo CLI for:
+Multilingual pipeline generation
+Translating files inside /input
+Generating output inside /translations
+Automating workflows with Node.js
+AI tools such as ChatGPT were used only for documentation, UI polishing, and idea refinement.
+Not for auto-generating code.
 
-understanding language codes & formats
-
-creating clean developer tools
-
-designing simple UI for demos
-
-🤝 Author
-
-Guna Sri
-B.Tech CSE | 3rd Year
+👤 Author
+Guna Sri (NandaGunasri)
+Developer • Student • Builder
