@@ -2,10 +2,20 @@
   "name": "polytranslate",
   "version": "1.0.0",
   "description": "Multilingual translator built using Lingo CLI",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
+  "bin": {
+    "lingo": "./bin/lingo.js"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js",
+    "translate-cli": "node index.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1"
   },
   "author": "Guna Sri",
   "license": "MIT"

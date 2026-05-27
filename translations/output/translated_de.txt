@@ -1,0 +1,2 @@
+Hallo! Willkommen bei PolyTranslate.
+Dieses Tool hilft Ihnen, Text mithilfe der Lingo-CLI in mehrere Sprachen zu konvertieren.

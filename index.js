@@ -1,5 +1,6 @@
 import { exec } from "child_process";
 import fs from "fs";
+import path from "path";
 
 const inputFile = "./input/example.txt";
 const outputFolder = "./translations/output";
@@ -10,13 +11,12 @@ if (!fs.existsSync(outputFolder)) {
   fs.mkdirSync(outputFolder, { recursive: true });
 }
 
-const content = fs.readFileSync(inputFile, "utf-8");
-
 console.log("🔄 Translating using Lingo CLI...\n");
 
 languages.forEach((lang) => {
   const outputFile = `${outputFolder}/translated_${lang}.txt`;
-  const command = `echo "${content}" | lingo translate --to ${lang}`;
+  // Pass the file path directly to the CLI wrapper to avoid Windows echo/piping issues
+  const command = `node ./bin/lingo.js translate --to ${lang} "${inputFile}"`;
 
   exec(command, (error, stdout) => {
     if (error) {
@@ -28,3 +28,4 @@ languages.forEach((lang) => {
     console.log(`✅ Saved: ${outputFile}`);
   });
 });
+

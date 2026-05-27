@@ -1,271 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>PolyTranslate — Multilingual made simple</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg1:#0c1120;
-    --bg2:#0a0f1a;
-    --card:#111827;
-    --border:#1f2937;
-    --muted:#9ca3af;
-    --text:#e5e7eb;
-    --accent:#22e4ac;
-  }
-
-  body{
-    margin:0;
-    font-family:"Poppins",sans-serif;
-    background:linear-gradient(180deg,var(--bg1),var(--bg2));
-    color:var(--text);
-  }
-
-  .nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:24px 48px;
-  }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-
-  .logo-row{
-    display:flex;
-    gap:6px;
-  }
-  .logo-circle{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:radial-gradient(circle at 30% 30%,#6ee7b7,#4f46e5);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .logo-circle span{
-    font-size:22px;
-    color:#0f1220;
-    font-weight:700;
-  }
-
-  .nav-links a{
-    color:var(--muted);
-    text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
-    transition:.2s;
-  }
-  .nav-links a:hover{
-    color:white;
-  }
-
-  .hero{
-    max-width:1100px;
-    margin:20px auto;
-    padding:40px;
-  }
-
-  .hero-title{
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:10px;
-  }
-  .hero-desc{
-    color:var(--muted);
-    font-size:17px;
-    margin-bottom:25px;
-  }
-
-  .btn-row{
-    display:flex;
-    gap:14px;
-    margin-bottom:32px;
-  }
-  .btn{
-    background:var(--accent);
-    color:black;
-    padding:14px 28px;
-    border-radius:12px;
-    border:none;
-    cursor:pointer;
-    font-weight:600;
-    font-size:16px;
-    transition:0.25s;
-  }
-  .btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 4px 20px rgba(34,228,172,0.4);
-  }
-
-  .btn-secondary{
-    background:transparent;
-    border:1px solid var(--border);
-    color:var(--muted);
-  }
-  .btn-secondary:hover{
-    background:#1f2937;
-    color:white;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-  }
-
-  .card{
-    background:var(--card);
-    padding:24px;
-    border-radius:16px;
-    border:1px solid var(--border);
-  }
-  .card ul{
-    margin-top:10px;
-    color:var(--muted);
-    padding-left:18px;
-  }
-
-  .demo-title{
-    font-weight:600;
-    margin-bottom:10px;
-  }
-
-  textarea, select{
-    width:100%;
-    padding:14px;
-    border-radius:12px;
-    background:#0d1422;
-    border:1px solid var(--border);
-    color:var(--text);
-    font-size:16px;
-    margin-bottom:16px;
-  }
-
-  .demo-output{
-    background:#0d1422;
-    border:1px solid var(--border);
-    padding:16px;
-    border-radius:12px;
-    white-space:pre-wrap;
-    color:var(--muted);
-    min-height:80px;
-  }
-
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PolyTranslate X — Global Localization Platform</title>
+  <meta name="description" content="AI-powered multilingual localization platform. Translate files, text, HTML, JSON, Markdown, and Code while preserving format and structures." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
-<nav class="nav">
-  <div class="brand">
-    <div class="logo-row">
-      <div class="logo-circle"><span>≈</span></div>
-      <div class="logo-circle"><span>≈</span></div>
+  <!-- NAVIGATION HEADER -->
+  <header class="nav">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="logo-circle">
+          <span>≈</span>
+        </div>
+        <div class="brand-text">
+          <h1>PolyTranslate X</h1>
+          <span>Global Localization</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#workspace">Workspace</a>
+        <a href="#stats">Dashboard</a>
+        <a href="#history" onclick="alert('Translation History: Coming Soon!')">History</a>
+        <div class="profile-avatar">
+          <span>👤</span>
+        </div>
+      </nav>
     </div>
-    <div>
-      <div style="font-weight:700;font-size:18px;">PolyTranslate</div>
-      <div style="color:var(--muted);font-size:13px;">Multilingual made simple</div>
-    </div>
-  </div>
+  </header>
 
-  <div class="nav-links">
-    <a href="#">Docs</a>
-    <a href="#">GitHub</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-title">Make your app global — instantly</div>
-  <div class="hero-desc">
-    Auto-generate translations for text, files, and UI labels using Lingo CLI.
-    Demo below shows live UI behavior — real translations are produced with Lingo CLI in backend scripts.
-  </div>
-
-  <div class="btn-row">
-    <button class="btn" onclick="scrollToDemo()">Try demo</button>
-    <button class="btn btn-secondary">View code</button>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Features</h3>
-      <ul>
-        <li>File & text translation (bulk)</li>
-        <li>Auto language detection</li>
-        <li>Dev-friendly CLI pipeline</li>
-        <li>Clean demo UI for judges</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Stack</h3>
-      <div style="color:var(--muted);margin-top:12px">
-        Node.js • Lingo CLI • HTML/CSS • Optional React
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">🌐 Advanced Localization Engine</span>
+      <h2 class="hero-title">Make Your Software Global.</h2>
+      <p class="hero-desc">
+        Translate text, files, HTML, JSON, Markdown and code.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">
+          Open Workspace <span>→</span>
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">
+          Try Demo
+        </button>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- LIVE DEMO -->
-  <div style="margin-top:40px" id="demo">
-    <h3>Live demo (UI-only)</h3>
-    <p style="color:var(--muted)">Type text, pick a language, press Translate</p>
+  <!-- DASHBOARD / ANALYTICS SECTION -->
+  <section class="container" id="stats">
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <div class="stat-val" id="statFilesVal">0</div>
+        <div class="stat-lbl">Files Translated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statLangsVal">0</div>
+        <div class="stat-lbl">Languages Used</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statCharsVal">0</div>
+        <div class="stat-lbl">Characters Processed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statSuccessVal">100%</div>
+        <div class="stat-lbl">Success Rate</div>
+      </div>
+    </div>
+  </section>
 
-    <textarea id="inputTxt" placeholder="Type a phrase like: Hello, welcome to PolyTranslate"></textarea>
+  <!-- MAIN LOCALIZATION WORKSPACE -->
+  <main class="container" id="workspace">
+    <div class="workspace-grid-two-col">
+      <!-- LEFT COLUMN: INPUT -->
+      <div class="panel input-panel">
+        <h3 class="panel-title">⚡ Translation Workspace</h3>
+        
+        <!-- INPUT SWITCH (FILE OR TEXT) -->
+        <div class="upload-wrapper">
+          
+          <!-- Dropzone file upload -->
+          <div class="dropzone" id="dropzone">
+            <div class="dropzone-icon">📤</div>
+            <div class="dropzone-title">Drag & drop translation files here</div>
+            <button type="button" class="btn-glass-upload">Choose File</button>
+            <div class="dropzone-desc">Supports TXT, HTML, JSON, MD, JS, PY (Max 10MB)</div>
+            <div class="supported-types">
+              <span class="type-badge">.txt</span>
+              <span class="type-badge">.html</span>
+              <span class="type-badge">.json</span>
+              <span class="type-badge">.md</span>
+              <span class="type-badge">.js</span>
+              <span class="type-badge">.py</span>
+            </div>
+            <input type="file" id="fileInput" class="file-input" accept=".txt,.html,.htm,.json,.md,.js,.ts,.py,.cpp,.java" />
+          </div>
 
-    <select id="langSelect">
-      <option value="hi">Hindi</option>
-      <option value="ta">Tamil</option>
-      <option value="te">Telugu</option>
-      <option value="fr">French</option>
-      <option value="es">Spanish</option>
-      <option value="de">German</option>
-    </select>
+          <!-- File upload info bar (hidden initially) -->
+          <div class="file-info-bar" id="fileInfoBar" style="display: none;">
+            <div class="file-info-details">
+              <span class="file-icon">📄</span>
+              <div>
+                <div class="file-name" id="fileName">example.json</div>
+                <div class="file-size" id="fileSize">14.5 KB</div>
+              </div>
+            </div>
+            <button class="btn-remove-file" id="removeFileBtn" title="Remove file">&times;</button>
+          </div>
 
-    <button class="btn" onclick="translateNow()">Translate</button>
+          <!-- Text input box -->
+          <div class="text-input-wrapper">
+            <label class="label-text">Or enter raw content below:</label>
+            <textarea class="text-input-area" id="textInputArea" placeholder="Type or paste your content here..."></textarea>
+          </div>
+        </div>
 
-    <div id="output" class="demo-output">Demo output will appear here...</div>
-  </div>
-</section>
+        <!-- TRANSLATE CONTROLS -->
+        <div class="translate-controls">
+          <div class="lang-selectors">
+            <!-- Source Language -->
+            <div class="source-lang-col">
+              <label class="label-text" for="sourceLangSelect">Source Language</label>
+              <select class="select-dropdown" id="sourceLangSelect">
+                <option value="auto" selected>Detect language automatically</option>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="ml">Malayalam</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+              </select>
+              <div id="langSuggestBox"></div>
+            </div>
 
-<script>
-  const sample={
-    hi:"नमस्ते! आपका स्वागत है!",
-    ta:"வணக்கம்! வரவேற்கிறோம்!",
-    te:"హలో! స్వాగతం!",
-    fr:"Bonjour! Bienvenue!",
-    es:"¡Hola! Bienvenido!",
-    de:"Hallo! Willkommen!"
-  };
+            <!-- Target Languages -->
+            <div class="target-lang-col">
+              <label class="label-text">Translate into (Select multiple for batch)</label>
+              <div class="languages-grid">
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="en" /> English
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="hi" /> Hindi
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="ta" /> Tamil
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="te" /> Telugu
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="ml" /> Malayalam
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="fr" /> French
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="es" /> Spanish
+                </label>
+                <label class="lang-checkbox-label">
+                  <input type="checkbox" value="de" /> German
+                </label>
+              </div>
+            </div>
+          </div>
 
-  function translateNow(){
-    let txt=document.getElementById("inputTxt").value.trim();
-    let lang=document.getElementById("langSelect").value;
-    let out=document.getElementById("output");
+          <!-- Pipeline Meta and Submit trigger -->
+          <div class="pipeline-status">
+            <div class="pipeline-meta">
+              <span>Characters: <strong id="metaCharCount">0</strong></span>
+              <span>Estimated Time: <strong id="metaEstTime">0.3s</strong></span>
+              <span>Format: <strong id="metaFormat">Text</strong></span>
+            </div>
+            
+            <div class="submit-row">
+              <div class="loader" id="btnSpinner" style="display: none;"></div>
+              <button class="btn-translate" id="translateBtn">
+                <span id="btnText">Translate Content</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-    if(!txt){
-      out.textContent="⚠️ Please type text first.";
-      return;
-    }
+      </div>
 
-    out.textContent="⏳ Translating...";
-    setTimeout(()=>{
-      out.textContent=`Input: ${txt}\n\nOutput (${lang.toUpperCase()}): ${sample[lang]}`;
-    },600);
-  }
+      <!-- RIGHT COLUMN: OUTPUT -->
+      <div class="panel output-panel" id="outputPanel">
+        <!-- Empty State (Shown initially) -->
+        <div class="empty-state" id="outputEmptyState">
+          <div class="empty-icon">🔮</div>
+          <h3>Translation Output</h3>
+          <p>Your translated content and files will appear here side-by-side.</p>
+        </div>
 
-  function scrollToDemo(){
-    document.getElementById("demo").scrollIntoView({behavior:"smooth"});
-  }
-</script>
+        <!-- Output Content (Hidden initially) -->
+        <div class="output-content" id="outputContent" style="display: none;">
+          <h3 class="panel-title">🔍 Side-by-Side Comparison</h3>
+          
+          <!-- Language Tabs -->
+          <div class="preview-tabs" id="previewTabs">
+            <!-- Dynamic tab buttons rendered via JS -->
+          </div>
+
+          <!-- Dual Pane Compare Split -->
+          <div class="compare-container">
+            <div class="compare-pane">
+              <div class="pane-label" id="compareLeftLabel">Source (English)</div>
+              <div class="pane-content" id="compareLeftPane">Source content preview...</div>
+            </div>
+            <div class="compare-pane">
+              <div class="pane-label" id="compareRightLabel">Translated (French)</div>
+              <div class="pane-content" id="compareRightPane">Translated output preview...</div>
+            </div>
+          </div>
+
+          <!-- Downloads Export -->
+          <div class="downloads-panel" style="margin-top: 30px;">
+            <h3 class="panel-title">📦 Download Outputs</h3>
+            <div class="download-cards-grid" id="downloadCardsGrid">
+              <!-- Dynamic download cards rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <strong>PolyTranslate X</strong>
+        <span>Hackathon Submission • Built using Lingo CLI & Google AI API</span>
+      </div>
+      <div class="footer-right">
+        <a href="#workspace">Workspace</a>
+        <a href="#stats">Dashboard</a>
+        <a href="#history" onclick="alert('Translation History: Coming Soon!')">History</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

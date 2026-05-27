@@ -1,0 +1,12 @@
+node_modules/
+package-lock.json
+uploads/*
+!uploads/.gitkeep
+translations/*
+!translations/output
+!translations/output/*
+.DS_Store
+.env
+.gemini/
+scratch/
+test_api.js
